@@ -1,0 +1,205 @@
+body{
+    background-color: #FFFFFF;/*#403124;*/
+}
+
+.bg{
+    background-color: #403124;
+}
+.right{
+    overflow: hidden;
+}
+.title, .titleText{
+    text-align: center;
+    font-family: 'Tangerine', serif;
+    color: #ffc490;
+    text-shadow: 2px 2px 2px #7F6248;
+}
+.smallTitle{
+    text-align: center;
+    font-family: 'Tangerine', serif;
+    color: #ffc490;
+    text-shadow: 2px 2px 2px #7F6248;
+}
+
+.title{
+    font-size: 5em;
+    border-bottom: inset;
+}
+.titleText{
+    font-size: 2em;
+}
+.lightText{
+    color: #ffffff;
+    text-indent: 8px;
+}
+.searchTitle{
+    font-family: 'Tangerine', serif;
+    color: #ffc490;
+    font-size: 40px;
+}
+.normalText{
+    color: #ffc490;
+}
+header{
+    margin-top: 15px;
+}
+.headerSection{
+    border: inset;
+    height: 100px;
+}
+
+
+ul li a{
+    color: #ffc490;
+}
+
+label, input{
+    display: block;
+}
+label{
+    color: #ffc490;
+}
+
+form button, label{
+    margin-top: 20px;
+}
+
+button{
+    border-radius: 10px;
+}
+.buttonRight, .buttonLeft{
+    margin-left: 40px;
+}
+.results{
+    border: #e5b081 outset;
+    background-color: #ffc490;
+    color: #403124;
+}
+.results h4, .results ul li, .results p{
+    color: #403124;
+}
+.userResults{
+    border: inset;
+}
+.userRow{
+    margin-top: 20px;
+}
+#placeholder{
+    margin-top: 50px;
+}
+.image{
+    width: 40%;
+    height: 400px;
+    margin-left: 50px;
+    border: outset #ffc490;
+    background-color: #ffffff;
+    background-image: url("../images/logo_03.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+input{
+    background-color: #403124;
+    color: #ffc490;
+    border: 2px inset #ffffff;
+}
+
+.bacPage{
+    border: 4px #ffc490 outset;
+    width: 70%;
+    height: auto;
+    box-shadow: 2px 2px 2px #7f6248;
+    background-color: #bf936c;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+h2{
+    text-align: center;
+    font-family: 'Tangerine', serif;
+    font-size: 4em;
+    color: #ffc490;
+}
+.niceFont{
+    color: #ffc490;
+}
+#bacAnswer{
+    border: 1px #000000 outset;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-size: 1.5em;
+}
+#modalButLeft{
+    float: left;
+    margin-top: 20px;
+}
+#modalButRight{
+    float: right;
+}
+.userButton{
+    border: outset;
+    border-radius: 10px;
+    background-color: #ffc490;
+    color: #403124;
+}
+.userButton:hover{
+    background-color: #403124;
+    color: #ffc490;
+}
+#modalButRight, #modalButLeft{
+    border: outset;
+    border-radius: 10px;
+    background-color: #ffc490;
+    color: #403124;
+}
+#modalButRight:hover, #modalButLeft:hover{
+    border: outset;
+    border-radius: 10px;
+    background-color: #403124;
+    color: #ffc490;
+}
+#calcBAC{
+    margin-left: 100px;
+    background-color: #ffc490;
+    color: #403124;
+}
+#calcBAC:hover{
+    background-color: #403124;
+    color: #ffc490;
+}
+.signUp{
+    background-color: #ffc490;
+    color: #403124;
+}
+.signUp:hover{
+    background-color: #403124;
+    color: #ffc490;
+}
+.modal-body{
+    background-color: #bf936c;
+}
+.modal-header, .modal-footer{
+    background-color: #7f6248;
+}
+.modal-text{
+    color: #ffc490;
+    text-align: center;
+}
+
+.formMargin{
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.formCenter{
+    margin: 2% 35%;
+}
+.detailsPage {
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    border: outset #403124;
+}
+
+#drinkButton{
+    float: left;
+}
