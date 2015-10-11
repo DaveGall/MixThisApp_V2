@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $password);
     $stmt->execute();//Executes the whole statement the data transfer process.
-    $displayName=$_POST['username'];
+    $displayName=$_POST['firstName'];
     if($displayName == false)
     {
         $greeting = 'Login Failed';
