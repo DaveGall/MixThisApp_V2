@@ -34,14 +34,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
 
 
         /*** tell the user we are logged in ***/
-        $yourDrink = '<div class="results"><h3 class="drinkTitle">Drink <b>'.$drink[0]['drink_name'].'</b></h3><ul class="ingredientDisplay">
+        $yourDrink = '<div class="results"><h3 class="drinkTitle"><b>'.$drink[0]['drink_name'].'</b></h3><hr><ul class="ingredientDisplay">
             <li>'.$drink[0]['Ingredient1'].'</li>
             <li>'.$drink[0]['ingredient2'].'</li>
             <li>'.$drink[0]['ingredient3'].'</li>
             <li>'.$drink[0]['ingredient4'].'</li>
             <li>'.$drink[0]['ingredient5'].'</li>
             <li>'.$drink[0]['ingredient6'].'</li>
-        </ul>
+        </ul><hr>
+        <p class="directions">Directions:</p>
         <p class="directions">'.$drink[0]['recipe'].'</p>
 
 
@@ -74,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
 
 
 
-    
+
     <?php echo $yourDrink  ?>
     <div id="placeholder"></div>
     <h4 id="drinkTitle"></h4>

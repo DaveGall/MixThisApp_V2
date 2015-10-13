@@ -5,6 +5,9 @@ body{
 .bg{
     background-color: #403124;
 }
+li{
+    list-style-type: none;
+}
 .right{
     overflow: hidden;
 }
