@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
     <h1 class="title">Mix This</h1>
     <div class="row"><!--Start the first row-->
         <div class="col-md-4"><!--Form div/column-->
-            <form action="" method="POST">
+            <form action="details.php" method="POST">
                 <div>
                     <h4 class="searchTitle">Search by drink</h4>
                     <hr>
@@ -128,7 +128,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
         </div>
         <div class="col-md-4 results">
             <h3>Results</h3>
-            <?php echo $yourDrink ?>
             <h4 id="drinkTitle"></h4>
         </div>
        <!-- <script>
