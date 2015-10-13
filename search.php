@@ -13,18 +13,32 @@ if(isset($_SESSION['username'])){
 }
 
 
-/*$user="root";//Sets a variable for the name of the user
+$user="root";//Sets a variable for the name of the user
 $pass="root";//Sets a variable for the password of that user
 $dbh = new PDO('mysql:host=localhost;dbname=mix_this;port=8888', $user, $pass);//Sets a variable for the address to the specific database, port, username and password to allow access.
 if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was submitted
-    $email=$_POST['email']; //Sets a variable to grab the data entered into the input with the name email
-    $uName=$_POST['userName'];//Sets a variable to grab the data entered into the input with the name firstname
-    $stmt=$dbh->prepare("INSERT INTO users (email, username) VALUES (:email, :username);");//Creates a variable that will insert the fruit name and fruit color values into their respective columns
-    $stmt->bindParam(':email', $email);//This passes the entered value for $fruitname into the fruitname column of the database
-    $stmt->bindParam(':username', $uName);//Places the entered value from $color into its place in the database.
+    $drink=$_POST['drink'];
+    echo $drink;
+    $stmt=$dbh->query("SELECT * FROM drinks WHERE drink_name='".$drink."'");//Creates a variable that will insert the fruit name and fruit color values into their respective columns
+    $stmt->bindParam(':drink', $drink);
     $stmt->execute();//Executes the whole statement the data transfer process.
+    $drink=$stmt->fetchAll();
+    if($drink == false)
+    {
+        //Do nothing
+    }
+    /*** if we do have a result, all is well ***/
+    else
+    {
+        /*** set the session user_id variable
+        $_SESSION['user_id'] = $user_id;***/
 
-}*/
+
+        /*** tell the user we are logged in ***/
+        $yourDrink = '<div><h3>Your Drink is <b>'.$drink[0]['drink_name'].'!!!</b></h3></div>';
+    }
+
+}
 ?>
 
 
@@ -55,12 +69,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
     <h1 class="title">Mix This</h1>
     <div class="row"><!--Start the first row-->
         <div class="col-md-4"><!--Form div/column-->
-            <form>
+            <form action="" method="POST">
                 <div>
                     <h4 class="searchTitle">Search by drink</h4>
                     <hr>
                     <label for="drink">Drink</label>
-                    <select id="drink" onchange="myFunction()">
+                    <select id="drink" name="drink"> <!--onchange="myFunction()"-->
+                        <option value="">Select a Drink</option>
                         <option value="Pomegranate Martini" id="pomegranateMartini">Pomegranate Martini</option>
                         <option value="Blue Lagoon" id="blueLagoon">Blue Lagoon</option>
                         <option value="Woo Woo" id="wooWoo">Woo Woo</option>
@@ -75,12 +90,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
                     </select>
 
                 </div>
+                <button type="submit" name="submit" value="Submit" class="submit">Submit</button>
             </form>
 
         </div><!--End the form column/div-->
 
         <div class="col-md-4">
-            <form>
+            <form> <!--action="" method="POST"-->
                 <h4 class="searchTitle">Search by ingredients</h4>
                 <hr>
                 <label for="ingredients">Ingredients</label>
@@ -112,10 +128,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
         </div>
         <div class="col-md-4 results">
             <h3>Results</h3>
-            <h3 id="drinkDisplay"></h3>
+            <?php echo $yourDrink ?>
             <h4 id="drinkTitle"></h4>
         </div>
-        <script>
+       <!-- <script>
 
             function myFunction(){
                 var item = document.getElementById("drink").value;
@@ -184,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
 
              });*/
 
-        </script>
+        </script>-->
     </div><!--End the first row-->
     <hr>
     <div id="placeholder"></div>
