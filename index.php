@@ -132,6 +132,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
         </div>
         <!--<button id="calcBAC" type="submit" name="submit" class="submit">Submit</button>-->
 
+    </div>
 </div>
 
 </body>

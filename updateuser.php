@@ -26,10 +26,9 @@ if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $email=$_POST['email'];
     $pass=$_POST['password'];
-    echo $email.'</br>'.$fName.'</br>'.$lName.'</br>'.$user_id;
-    $stmt=$dbh->prepare/*("UPDATE users SET firstname='$fName', lastname='$lName', email='$email', username='$username', password='$pass' where user_id='$user_id'");*/("update users set firstname='".$fName."', lastname='".$lName."', email='".$email."', username='".$username."', password='".$pass ."'where user_id='$user_id'");
+    $newId=$user_id[0]['user_id'];
+    $stmt=$dbh->prepare("UPDATE users SET firstname='$fName', lastname='$lName', email='$email', username='$username', password='$pass' where user_id='$newId'");
     $stmt->execute();
-    $results=$stmt->fetchAll(PDO::FETCH_ASSOC);
     //header('Location: getuser.php');
     die();
 

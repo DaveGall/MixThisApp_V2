@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
         $_SESSION['username'] = $displayName;
 
         /*** tell the user we are logged in ***/
-        $greeting = '<h3>Welcome to Mix This <b>'.$displayName.'!!!</b></h3></br><a href="search.php"><button type="submit" class="userButton">Edit</button> </a>
+        $greeting = '<h3>Welcome to Mix This <b>'.$displayName.'!!!</b></h3></br><a href="updateuser.php"><button type="submit" class="userButton">Edit</button> </a>
     <a href="bac.php"><button type="submit" class="userButton">Delete</button> </a>';
     }
 
