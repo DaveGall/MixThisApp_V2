@@ -7,15 +7,13 @@
  */
 session_start();
 
-$_SESSION["success"] = "<div class='success'><h2>Your update was successful</h2></div>";
+//$_SESSION["success"] = "<div class='success'><h2>Your update was successful</h2></div>";
 $user = 'root';
 $pass='root';
 $dbh = new PDO("mysql:host=localhost;dbname=mix_this;port=8888",$user,$pass);
 $user_id=$_SESSION['user_id'];
 $stmt=$dbh->query("select * from users where user_id = :user_id");
-//$stmt->bindParam(':user_id', $user_id);
-//$stmt->execute();
-//$result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 if(isset($_POST['submit'])){
     /*if(!filter_var($_POST['website'], FILTER_VALIDATE_URL)){
@@ -28,11 +26,12 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $pass=$_POST['password'];
     $newId=$user_id[0]['user_id'];
-    header('Location: getuser.php');
+
     $stmt=$dbh->prepare("UPDATE users SET firstname='$fName', lastname='$lName', email='$email', username='$username', password='$pass' where user_id='$newId'");
     $stmt->execute();
+    header('Location: search.php');
     $user_id = $stmt->fetchAll();
-    echo $user_id[0]['firstname'];
+    var_dump($user_id);
     if($user_id == false)
     {
         $greeting = 'Update Failed';
@@ -46,7 +45,7 @@ if(isset($_POST['submit'])){
 
         /*** tell the user we are logged in ***/
         $greeting = '<div><h3>Welcome back <b>'.$user_id[0]['firstname'].'!!!</b></h3></br><a href="updateuser.php"><button type="submit" class="userButton">Edit</button> </a>
-    <a href="deleteuser.php?user_id='.$user_id[0]['user_id'].'""><button type="submit" name="user_id" class="userButton">Delete</button> </a></div>';
+    <a href="deleteuser.php?user_id='.$user_id[0]['user_id'].'""><button type="submit" class="userButton" name="user_id">Delete</button> </a></div>';
     }
 
     die();
