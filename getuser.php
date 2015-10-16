@@ -1,7 +1,10 @@
 <?php
 
 session_start();
-
+if(isset($_SESSION['success'])){
+    echo $_SESSION['success'];
+    unset($_SESSION['success']);
+}
 $user = "root";
 $pass = "root";
 $dbh = new PDO("mysql:host=localhost;dbname=mix_this;port=8888",$user,$pass);

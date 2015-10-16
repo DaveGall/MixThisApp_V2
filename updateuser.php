@@ -6,6 +6,7 @@
  * Time: 4:13 PM
  */
 session_start();
+
 $_SESSION["success"] = "<div class='success'><h2>Your update was successful</h2></div>";
 $user = 'root';
 $pass='root';
@@ -27,9 +28,27 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $pass=$_POST['password'];
     $newId=$user_id[0]['user_id'];
+    header('Location: getuser.php');
     $stmt=$dbh->prepare("UPDATE users SET firstname='$fName', lastname='$lName', email='$email', username='$username', password='$pass' where user_id='$newId'");
     $stmt->execute();
-    //header('Location: getuser.php');
+    $user_id = $stmt->fetchAll();
+    echo $user_id[0]['firstname'];
+    if($user_id == false)
+    {
+        $greeting = 'Update Failed';
+    }
+    /*** if we do have a result, all is well ***/
+    else
+    {
+        /*** set the session user_id variable ***/
+        $_SESSION['user_id'] = $user_id;
+
+
+        /*** tell the user we are logged in ***/
+        $greeting = '<div><h3>Welcome back <b>'.$user_id[0]['firstname'].'!!!</b></h3></br><a href="updateuser.php"><button type="submit" class="userButton">Edit</button> </a>
+    <a href="deleteuser.php?user_id='.$user_id[0]['user_id'].'""><button type="submit" name="user_id" class="userButton">Delete</button> </a></div>';
+    }
+
     die();
 
     /*}*/
