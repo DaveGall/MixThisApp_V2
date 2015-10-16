@@ -27,7 +27,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 
         /*** tell the user we are logged in ***/
         $greeting = '<div><h3>Welcome back <b>'.$user_id[0]['firstname'].'!!!</b></h3></br><a href="updateuser.php"><button type="submit" class="userButton">Edit</button> </a>
-    <a href="bac.php"><button type="submit" class="userButton">Delete</button> </a></div>';
+    <a href="deleteuser.php?user_id='.$user_id[0]['user_id'].'""><button type="submit" name="user_id" class="userButton">Delete</button> </a></div>';
     }
 
 
