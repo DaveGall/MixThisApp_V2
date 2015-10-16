@@ -8,6 +8,9 @@ body{
 li{
     list-style-type: none;
 }
+.resultsDisplay{
+
+}
 .right{
     overflow: hidden;
 }

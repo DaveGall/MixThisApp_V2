@@ -90,46 +90,47 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
                     </select>
 
                 </div>
-                <button type="submit" name="submit" value="Submit" class="submit">Submit</button>
+                <button type="submit" name="submit" value="Submit" class="submit userButton">Submit</button>
             </form>
 
         </div><!--End the form column/div-->
+        <div class="col-md-4"></div><!--Spacer column between the two search forms-->
 
         <div class="col-md-4">
-            <form> <!--action="" method="POST"-->
-                <h4 class="searchTitle">Search by ingredients</h4>
-                <hr>
-                <label for="ingredients">Ingredients</label>
-                <select id="ingredients" onchange="ingredientsFunction()">
-                    <option value="vodka">Vodka</option>
-                    <option value="raspberry Vodka">Raspberry Vodka</option>
-                    <option value="peach Schnapps">Peach Schnapps</option>
-                    <option value="blue Curacao">Blue Curacao</option>
-                    <option value="rum">Rum</option>
-                    <option value="light Rum">Light Rum</option>
-                    <option value="dark Rum">Dark Rum</option>
-                    <option value="orange Liqueur">Orange Liqueur</option>
-                    <option value="tequila">Tequila</option>
-                    <option value="grenadine">Grenadine</option>
-                    <option value="lime Juice">Lime Juice</option>
-                    <option value="lemonade">Lemonade</option>
-                    <option value="cranberry Juice">Cranberry Juice</option>
-                    <option value="pineapple Juice">Pineapple Juice</option>
-                    <option value="pomegranate">Pomegranate Juice</option>
-                    <option value="coke">Coke</option>
-                    <option value="citrus Soda">Citrus Soda</option>
-                    <option value="sprite">Sprite</option>
-                    <option value="club Soda">Club Soda</option>
-                    <option value="sweet and SourMix">Sweet and Sour Mix</option>
-                </select>
-                <!-- <button id="submitButton" value="Submit" onclick="searchIngredients()">Submit</button>-->
+            <form action="results.php" method="POST">
+                <div>
+                    <h4 class="searchTitle">Search by ingredients</h4>
+                    <hr>
+                    <label for="ingredients">Ingredients</label>
+                    <select id="ingredients" name="ingredient"> <!--onchange="ingredientsFunction()"-->
+                        <option value="">Select an Ingredient</option>
+                        <option value="vodka">Vodka</option>
+                        <option value="raspberry Vodka">Raspberry Vodka</option>
+                        <option value="peach Schnapps">Peach Schnapps</option>
+                        <option value="blue Curacao">Blue Curacao</option>
+                        <option value="rum">Rum</option>
+                        <option value="light Rum">Light Rum</option>
+                        <option value="dark Rum">Dark Rum</option>
+                        <option value="orange Liqueur">Orange Liqueur</option>
+                        <option value="tequila">Tequila</option>
+                        <option value="grenadine">Grenadine</option>
+                        <option value="lime Juice">Lime Juice</option>
+                        <option value="lemonade">Lemonade</option>
+                        <option value="cranberry Juice">Cranberry Juice</option>
+                        <option value="pineapple Juice">Pineapple Juice</option>
+                        <option value="pomegranate">Pomegranate Juice</option>
+                        <option value="coke">Coke</option>
+                        <option value="citrus Soda">Citrus Soda</option>
+                        <option value="sprite">Sprite</option>
+                        <option value="club Soda">Club Soda</option>
+                        <option value="sweet and SourMix">Sweet and Sour Mix</option>
+                    </select>
+                </div>
+                <button type="submit" name="submit" value="Submit" class="submit userButton">Submit</button>
             </form>
 
         </div>
-        <div class="col-md-4 results">
-            <h3>Results</h3>
-            <h4 id="drinkTitle"></h4>
-        </div>
+
        <!-- <script>
 
             function myFunction(){
